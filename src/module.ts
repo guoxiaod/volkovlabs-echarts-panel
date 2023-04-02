@@ -71,6 +71,27 @@ export const plugin = new PanelPlugin<PanelOptions>(EChartsPanel).setNoPadding()
     });
 
   /**
+   * QQ
+   */
+  builder
+    .addTextInput({
+      path: 'qq.key',
+      name: 'Access Key',
+      description: 'Set Access Key to use QQ Maps. You can get it from https://lbs.qq.com/dev/console/application/mine',
+      defaultValue: DefaultOptions.qq.key,
+      showIf: (config) => config.map === Map.TMAP,
+      category: ['QQ'],
+    })
+    .addTextInput({
+      path: 'qq.libraries',
+      name: 'Libraries',
+      description: 'Name of the Libraries to use.',
+      defaultValue: DefaultOptions.qq.libraries,
+      showIf: (config) => config.map === Map.TMAP,
+      category: ['QQ'],
+    });
+
+  /**
    * Google
    */
   builder

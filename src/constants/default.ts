@@ -100,6 +100,10 @@ export const DefaultOptions: PanelOptions = {
     key: '',
     plugin: 'AMap.Scale,AMap.ToolBar',
   },
+  qq: {
+    key: '',
+    libraries: '',
+  },
   google: {
     key: '',
     callback: 'gmapReady',

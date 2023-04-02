@@ -2,6 +2,7 @@ import { Map, Renderer } from '../constants';
 import { BaiduOptions } from './baidu';
 import { EditorOptions } from './editor';
 import { GaodeOptions } from './gaode';
+import { QQOptions } from './qq';
 import { GoogleOptions } from './google';
 
 /**
@@ -49,6 +50,13 @@ export interface PanelOptions {
    * @type {GaodeOptions}
    */
   gaode: GaodeOptions;
+
+  /**
+   * QQ
+   *
+   * @type {QQOptions}
+   */
+  qq: QQOptions;
 
   /**
    * Google

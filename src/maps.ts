@@ -1,6 +1,6 @@
 import * as echarts from 'echarts';
 import { MapApi } from './constants';
-import { BaiduOptions, GaodeOptions, GoogleOptions } from './types';
+import { BaiduOptions, GaodeOptions, GoogleOptions, QQOptions } from './types';
 
 /**
  * Register maps
@@ -43,6 +43,21 @@ export const loadGaode = (options: GaodeOptions) => {
   const script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = `${MapApi.gaode}?v=1.4.15&ak=${options.key}&plugin=${options.plugin}`;
+
+  document.body.appendChild(script);
+};
+
+/**
+ * Load QQ Maps
+ */
+export const loadQQ = (options: QQOptions) => {
+  if ((window as any).TMap) {
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = `${MapApi.qq}?v=1.exp&key=${options.key}&libraries=${options.libraries}`;
 
   document.body.appendChild(script);
 };

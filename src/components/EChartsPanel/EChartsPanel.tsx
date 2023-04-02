@@ -11,7 +11,7 @@ import { AlertErrorPayload, AlertPayload, AppEvents, LoadingState, PanelProps } 
 import { getAppEvents, getDataSourceSrv, locationService } from '@grafana/runtime';
 import { Alert, useStyles2, useTheme2 } from '@grafana/ui';
 import { Map } from '../../constants';
-import { loadBaidu, loadGaode, loadGoogle, registerMaps } from '../../maps';
+import { loadBaidu, loadGaode, loadQQ, loadGoogle, registerMaps } from '../../maps';
 import { getStyles } from '../../styles';
 import { PanelOptions } from '../../types';
 
@@ -158,6 +158,9 @@ export const EChartsPanel: React.FC<Props> = ({ options, data, width, height, re
           break;
         case Map.BMAP:
           loadBaidu(options.baidu);
+          break;
+        case Map.TMAP:
+          loadQQ(options.qq);
           break;
         case Map.AMAP:
           loadGaode(options.gaode);
